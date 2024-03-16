@@ -1,0 +1,4 @@
+INDEX VERSION 1.132+C:\projetos-Java e Programação Orientada a Objetos Expert\.metadata\.plugins\org.eclipse.jdt.core
+1865797976.index
+3510846143.index
+464149355.index
