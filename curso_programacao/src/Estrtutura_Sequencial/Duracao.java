@@ -1,3 +1,4 @@
+package Estrtutura_Sequencial;
 import javax.swing.JOptionPane;
 
 public class Duracao {

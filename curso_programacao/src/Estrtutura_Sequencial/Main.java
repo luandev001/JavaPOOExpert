@@ -1,3 +1,4 @@
+package Estrtutura_Sequencial;
 import java.util.Locale;
 
 public class Main {
