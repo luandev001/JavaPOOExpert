@@ -26,28 +26,26 @@ public class Imposto_Java {
 
 		double tax = 0;
 
-		if (incomeAnnual / 12 > 5000) {
-			tax = incomeAnnual * 0.20;
-			System.out.println("1° opção");
+		if (incomeAnnual / 12 <= 3000) {
+			tax = 0;
 		}
 
-		else if ((incomeAnnual / 12 >= 3000) && (incomeAnnual / 12 <= 5000)) {
+		else if (incomeAnnual / 12 <= 5000) {
 			tax = incomeAnnual * 0.10;
-			System.out.println("2° opção");
 		}
 
 		else {
-			tax = 0;
-			System.out.println("3° opção");
+			tax = incomeAnnual * 0.20;
 		}
 		
 		double taxServiceProvision = 0; // Taxa de prestação de Serviço --> 15%
-		if (serviceProvision != 0) {
+		if (serviceProvision > 0) {
 			taxServiceProvision = serviceProvision * 0.15;
 		}
 		
+		System.out.println("Ganho de capital R$ " + capitalGain);
 		double taxCapitalGain = 0; // imposto Ganho de capital
-		if (capitalGain != 0) {
+		if (capitalGain > 0) {
 			taxCapitalGain = capitalGain * 0.20;
 		}
 		
@@ -60,8 +58,13 @@ public class Imposto_Java {
 		if ((medicalExpenses + educationalExpenses) > totalGrossTax) {
 			deductibleExpenses = medicalExpenses + educationalExpenses;
 			maxDeductible = totalGrossTax * 0.30 ;
-			rebate = totalGrossTax - maxDeductible;
-			taxValue = rebate;
+			rebate = maxDeductible;
+			taxValue = totalGrossTax - rebate;
+		} else {
+			deductibleExpenses = medicalExpenses + educationalExpenses;
+			maxDeductible = totalGrossTax * 0.30 ;
+			rebate = deductibleExpenses;
+			taxValue = totalGrossTax - rebate;
 		}
 		
 		System.out.println("RELATÓRIO DE IMPOSTO DE RENDA");
@@ -69,23 +72,23 @@ public class Imposto_Java {
 		System.out.println("\n");
 		
 		System.out.println("CONSOLIDADO DE RENDA: ");
-		System.out.printf("Imposto sobre salário: %.2f%\n", tax);
-		System.out.printf("Imposto sobre serviços: %.2f%\n", taxServiceProvision);
-		System.out.printf("Imposto sobre ganho de capital: %.2f%\n", taxCapitalGain);
+		System.out.printf("Imposto sobre salário: %.2f%n",  tax);
+		System.out.printf("Imposto sobre serviços: %.2f%n", taxServiceProvision);
+		System.out.printf("Imposto sobre ganho de capital: %.2f%n", taxCapitalGain);
 		
 		System.out.println("\n");
 		
 		System.out.println("DEDUÇÕES: ");
-		System.out.printf("Máximo dedutível: %.2f%\n", maxDeductible);
-		System.out.printf("Gastos dedutíveis: %.2f%\n", deductibleExpenses);
+		System.out.printf("Máximo dedutível: %.2f%n", maxDeductible);
+		System.out.printf("Gastos dedutíveis: %.2f%n", deductibleExpenses);
 		
 		System.out.println("\n");
 		
 		System.out.println("RESUMO: ");
-		System.out.printf("Imposto bruto total: %.2f%\n", totalGrossTax);
-		System.out.printf("Abatimento: %.2f%\n", rebate);
-		System.out.printf("Imposto devido: %.2f%\n", taxValue);
-
+		System.out.printf("Imposto bruto total: %.2f%n", totalGrossTax);
+		System.out.printf("Abatimento: %.2f%n", rebate);
+		System.out.printf("Imposto devido: %.2f%n", taxValue);
+		
 		sc.close();
 	}
 
