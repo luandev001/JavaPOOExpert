@@ -12,7 +12,7 @@ public class Program {
 		try {
 			fr = new FileReader(path);
 			br = new BufferedReader(fr);
-			String line = br.readLine();
+			String line = br.readLine(); // readLine() --> ler linha
 			while (line != null) {
 				System.out.println(line);
 				line = br.readLine();
@@ -26,7 +26,7 @@ public class Program {
 				if (fr != null)
 					fr.close();
 			} catch (IOException e) {
-				e.printStackTrace();
+				e.printStackTrace(); //Caso de alguma exceção, o printStackTrace exibirá o erro.
 			}
 		}
 	}
