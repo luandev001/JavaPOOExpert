@@ -15,11 +15,11 @@ public class Program {
 		try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 			String employeeCsv = br.readLine();
 			while (employeeCsv != null) {
-				String[] fields = employeeCsv.split(",");
+				String[] fields = employeeCsv.split(","); //Separar os itens por virgula
 				list.add(new Employee(fields[0], Double.parseDouble(fields[1])));
 				employeeCsv = br.readLine();
 			}
-			Collections.sort(list);
+			Collections.sort(list); // Forma de ordenar uma coleção
 			for (Employee emp : list) {
 				System.out.println(emp.getName() + ", " + emp.getSalary());
 			}
