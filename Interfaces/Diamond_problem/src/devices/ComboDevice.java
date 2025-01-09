@@ -1,7 +1,5 @@
 package devices;
 
-import application.Scanner;
-
 public class ComboDevice extends Device implements Scanner, Printer{
 
 	public ComboDevice(String serialNumber) {

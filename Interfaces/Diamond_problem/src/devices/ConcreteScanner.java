@@ -1,7 +1,5 @@
 package devices;
 
-import application.Scanner;
-
 public class ConcreteScanner extends Device implements Scanner {
 
 	public ConcreteScanner(String serialNumber) {

@@ -11,7 +11,6 @@ public class RentalService {
 	private TaxService taxService;
 
 	public RentalService(Double pricePorHour, Double pricePourDay, TaxService taxService) {
-		super();
 		this.pricePorHour = pricePorHour;
 		this.pricePourDay = pricePourDay;
 		this.taxService = taxService;
