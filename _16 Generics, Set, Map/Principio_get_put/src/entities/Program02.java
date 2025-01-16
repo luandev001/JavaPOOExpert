@@ -7,7 +7,7 @@ public class Program02 {
 
 	public static void main(String[] args) {
 		
-		//Princípio get/put
+		//Princípio get/put - contravariância
 		
 		List<Object> myObjs = new ArrayList<Object>();
 		myObjs.add("Maria");
