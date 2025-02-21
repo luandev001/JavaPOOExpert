@@ -20,7 +20,7 @@ public class Program {
 		list.add(new Product("HD Case", 80.90));
 		
 		ProductService ps = new ProductService();
-		double sum = ps.filteredSum(list);
+		double sum = ps.filteredSum(list, p -> p.getName().charAt(0) == 'T');
 		System.out.println("Sum = " + String.format("%.2f", sum));
 	}
 
