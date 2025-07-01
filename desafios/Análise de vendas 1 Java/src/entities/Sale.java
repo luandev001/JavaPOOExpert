@@ -10,7 +10,7 @@ public class Sale {
 	
 	public Sale() {
 	}
-
+	
 	public Sale(Integer month, Integer year, String seller, Integer items, Double total) {
 		this.month = month;
 		this.year = year;
@@ -59,5 +59,14 @@ public class Sale {
 		this.total = total;
 	}
 	
+	public Double averagePrice() {
+		return total / items;
+	}
+
+	@Override
+	public String toString() {
+		return month + "/" + year + ", " + seller + ", " + items + ", "
+				+ String.format("%.2f", total) + ", pm = " + String.format("%.2f", averagePrice());
+	}
 	
 }
